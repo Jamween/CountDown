@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Countdown.MainPage"
+             BackgroundColor="#F7F7F7"
+             Padding="20">
+
+    <VerticalStackLayout Spacing="20" HorizontalOptions="Center" VerticalOptions="Center">
+
+        <!-- Round Label -->
+        <Label x:Name="rounds"
+               Text="Round: 1"
+               TextColor="#2E2E2E"
+               FontSize="36"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Margin="0, 0, 0, 20"/>
+
+        <!-- Player Labels -->
+        <StackLayout Spacing="10">
+            <Label x:Name="lbl1"
+                   Text="Player 1: 0"
+                   TextColor="#2E2E2E"
+                   FontSize="28"
+                   HorizontalOptions="Center"/>
+            <Label x:Name="lbl2"
+                   Text="Player 2: 0"
+                   TextColor="#2E2E2E"
+                   FontSize="28"
+                   HorizontalOptions="Center"/>
+        </StackLayout>
+
+        <!-- Countdown Grid -->
+        <Grid x:Name="CountDownGrid"
+              BackgroundColor="#007BFF"
+              RowDefinitions="Auto"
+              ColumnDefinitions="*, *, *, *, *, *, *, *, *"
+              HorizontalOptions="Center"
+              Margin="0, 20, 0, 20">
+        </Grid>
+
+        <!-- Buttons Grid -->
+        <Grid RowDefinitions="Auto"
+              ColumnDefinitions="*, *, *, *, *, *, *, *, *"
+              HorizontalOptions="Center"
+              Margin="0, 20, 0, 20">
+            <Button x:Name="Vowel"
+                    Clicked="GiveVowel"
+                    Text="Vowel"
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Margin="10"/>
+            <Button x:Name="Consonant"
+                    Clicked="GiveConsonant"
+                    Text="Consonant"
+                    Grid.Row="0"
+                    Grid.Column="5"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Margin="10"/>
+        </Grid>
+
+        <!-- Play Button, New Round Button, and Timer -->
+        <VerticalStackLayout Margin="20" HorizontalOptions="Center">
+            <Button x:Name="play"
+                    Clicked="playBtn"
+                    Text="Start Game"
+                    HeightRequest="50"
+                    WidthRequest="200"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    IsVisible="False"
+                    Margin="10"/>
+            <Label x:Name="showTurn"
+                   Text="Player Turn"
+                   FontSize="28"
+                   TextColor="#2E2E2E"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   IsVisible="False"
+                   Margin="10"/>
+            <Button x:Name="newRound"
+                    Clicked="startRound"
+                    Text="Start New Round"
+                    HeightRequest="50"
+                    WidthRequest="200"
+                    BackgroundColor="#FF5722"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    IsVisible="False"
+                    Margin="10"/>
+            <Label x:Name="timerLbl"
+                   Text="Timer: "
+                   FontSize="28"
+                   TextColor="#2E2E2E"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   IsVisible="False"
+                   Margin="10"/>
+        </VerticalStackLayout>
+
+        <!-- Entry and Submit Button -->
+        <HorizontalStackLayout x:Name="answerLayout" 
+                               HorizontalOptions="Center" 
+                               Spacing="10" 
+                               IsVisible="true">
+            <Entry x:Name="EnterWord" 
+                   Placeholder="Enter Word Here" 
+                   MaxLength="9" 
+                   BackgroundColor="White" 
+                   TextColor="Black"/>
+            <Button x:Name="SubmitEntry" 
+                    Clicked="ClickedSubmit" 
+                    Text="Submit"
+                    BackgroundColor="#007BFF"
+                    TextColor="White"/>
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

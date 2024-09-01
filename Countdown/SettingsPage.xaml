@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Countdown.SettingsPage"
+             BackgroundColor="{DynamicResource BackgroundColor}"
+             Padding="20">
+
+    <!-- A vertical stack layout to arrange child elements vertically with spacing -->
+    <VerticalStackLayout Spacing="20" VerticalOptions="Center">
+
+        <!-- Header label for the settings page -->
+        <Label Text="App Settings" 
+               FontSize="24" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center" />
+
+        <!-- Slider to adjust font size -->
+        <Slider x:Name="fontSizeSlider" 
+                Minimum="10" 
+                Maximum="30" 
+                Value="14" />
+        <!-- Label to display the selected font size -->
+        <Label Text="Font Size" 
+               FontSize="{Binding Source={x:Reference fontSizeSlider}, Path=Value}" />
+
+        <!-- Slider to adjust the timer length -->
+        <Slider x:Name="timerLengthSlider" 
+                Minimum="10" 
+                Maximum="60" 
+                Value="30" />
+        <!-- Label to display the selected timer length -->
+        <Label Text="Timer Length: {Binding Source={x:Reference timerLengthSlider}, Path=Value}" />
+
+        <!-- Slider to adjust the number of rounds -->
+        <Slider x:Name="roundsSlider" 
+                Minimum="1" 
+                Maximum="10" 
+                Value="6" />
+        <!-- Label to display the selected number of rounds -->
+        <Label Text="Number of Rounds: {Binding Source={x:Reference roundsSlider}, Path=Value}" />
+
+        <!-- Button to save the settings -->
+        <Button Text="Save Settings" 
+                Clicked="SaveSettings" />
+    </VerticalStackLayout>
+</ContentPage>

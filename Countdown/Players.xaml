@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Countdown.Players"
+             Title="Players"
+             BackgroundColor="#F5F5F5">
+
+    <VerticalStackLayout Padding="20" Spacing="15" HorizontalOptions="Center" VerticalOptions="Center">
+
+        <!-- Page Title Label -->
+        <Label
+            Text="Enter Player Names"
+            FontSize="32"
+            FontAttributes="Bold"
+            TextColor="#333333"
+            HorizontalOptions="Center"
+            VerticalOptions="Center"
+            Margin="0, 0, 0, 30"/>
+
+        <!-- Player Entry Grid -->
+        <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="Auto" HorizontalOptions="Center" VerticalOptions="Center" RowSpacing="15">
+
+            <!-- Player 1 Entry -->
+            <Frame CornerRadius="10"
+                   HasShadow="True"
+                   Padding="0"
+                   Margin="0, 0, 0, 15"
+                   Grid.Row="0"
+                   BackgroundColor="White"
+                   BorderColor="#DDDDDD">
+                <Entry x:Name="Player1Name"
+                       Placeholder="Player 1"
+                       HeightRequest="50"
+                       WidthRequest="300"
+                       TextColor="#333333"
+                       BackgroundColor="White"/>
+            </Frame>
+
+            <!-- Player 2 Entry -->
+            <Frame CornerRadius="10"
+                   HasShadow="True"
+                   Padding="0"
+                   Margin="0, 0, 0, 15"
+                   Grid.Row="1"
+                   BackgroundColor="White"
+                   BorderColor="#DDDDDD">
+                <Entry x:Name="Player2Name"
+                       Placeholder="Player 2"
+                       HeightRequest="50"
+                       WidthRequest="300"
+                       TextColor="#333333"
+                       BackgroundColor="White"/>
+            </Frame>
+
+            <!-- Submit Button -->
+            <Button x:Name="nameBtn"
+                    Text="Start Game"
+                    Clicked="clickSubmit"
+                    BackgroundColor="#6200EE"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    WidthRequest="250"
+                    CornerRadius="25"
+                    Grid.Row="2"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
